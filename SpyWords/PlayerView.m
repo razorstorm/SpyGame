@@ -15,6 +15,17 @@
 
 @implementation PlayerView
 
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    self.backgroundColor = [UIColor redColor];
+    NSArray *contentViewNib = [[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil];
+//    ((UIView *)contentViewNib[0]).frame.size = frame.size;
+    [self.contentView addSubview:contentViewNib[0]];
+  }
+  return self;
+}
+
 + (PlayerView *)playerView {
   return [[[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil] objectAtIndex:0];
 }
@@ -28,7 +39,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
+  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
 }
 
 @end

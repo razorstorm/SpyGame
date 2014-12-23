@@ -89,13 +89,9 @@
   return self.players.count;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
   PlayerView *cell = (PlayerView *)[collectionView dequeueReusableCellWithReuseIdentifier:[PlayerView reuseIdentifier] forIndexPath:indexPath];
-//  if (!cell) {
-//    PlayerView *cell = [PlayerView playerView];
-//  }
 
   if (indexPath.row >= 0 && indexPath.row < self.players.count) {
     cell.player = self.players[indexPath.row];

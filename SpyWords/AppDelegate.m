@@ -21,8 +21,9 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-  [aFlowLayout setItemSize:CGSizeMake(200, 140)];
-  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+  [aFlowLayout setItemSize:CGSizeMake(100, 140)];
+  [aFlowLayout setSectionInset:UIEdgeInsetsMake(20, 20, 20, 20)];
+  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
 
   GameViewController *mvc = [[GameViewController alloc] initWithCollectionViewLayout:aFlowLayout];
 
