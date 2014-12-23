@@ -10,7 +10,9 @@
 #import "Player.h"
 
 @interface PlayerView ()
-@property (nonatomic, weak) IBOutlet UITextView *debugText;
+@property (weak, nonatomic) IBOutlet UIButton *executeButton;
+@property (nonatomic, strong) UICollectionViewCell *side1;
+@property (nonatomic, strong) UICollectionViewCell *side2;
 @end
 
 @implementation PlayerView
@@ -18,10 +20,14 @@
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor blackColor];
     NSArray *contentViewNib = [[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil];
-//    ((UIView *)contentViewNib[0]).frame.size = frame.size;
-    [self.contentView addSubview:contentViewNib[0]];
+    self.side1 = contentViewNib[0];
+
+    self.side2 = [[UICollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    self.side2.backgroundColor = [UIColor whiteColor];
+
+    [self.contentView addSubview:self.side1];
   }
   return self;
 }
@@ -38,8 +44,27 @@
   return [PlayerView reuseIdentifier];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
+- (void)setPlayer:(Player *)player {
+  _player = player;
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
+  label.text = self.player.isSpy ? @"Spy!" : @"Innocent!";
+  label.textAlignment = NSTextAlignmentCenter;
+  if (self.player.isSpy) {
+    self.side2.backgroundColor = [UIColor greenColor];
+  }
+  else {
+    self.side2.backgroundColor = [UIColor redColor];
+  }
+  [self.side2.contentView addSubview:label];
 }
 
+- (IBAction)execute:(id)sender {
+  self.player.alive = false;
+
+  [UIView transitionFromView:self.side1
+                      toView:self.side2
+                    duration:0.4f
+                     options:UIViewAnimationOptionTransitionFlipFromRight
+                  completion:NULL];
+}
 @end

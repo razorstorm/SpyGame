@@ -25,7 +25,7 @@
     self.regularWord = @"Box";
     self.spyWord = @"Block";
 
-    [self buildPlayers:5 photos:nil];
+    [self buildPlayers:7 photos:nil];
   }
   return self;
 }
@@ -54,15 +54,15 @@
   NSMutableSet *spyIndexes = [[NSMutableSet alloc] init];
 
   for (int spyNum = 0; spyNum < self.numSpies; spyNum++) {
-    NSInteger randomIndex = arc4random_uniform((u_int32_t)self.numSpies);
+    NSInteger randomIndex = arc4random_uniform((u_int32_t)numPlayers);
 
     while ([spyIndexes containsObject:@(randomIndex)]) {
       randomIndex++;
       if (randomIndex >= self.numSpies) {
         randomIndex = 0;
       }
-      [spyIndexes addObject:@(randomIndex)];
     }
+    [spyIndexes addObject:@(randomIndex)];
   }
 
   NSMutableArray *players = [[NSMutableArray alloc] init];
