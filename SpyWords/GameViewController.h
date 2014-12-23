@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GameViewController : UICollectionViewController
-
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout;
 @end

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1926D6C3-388F-4F31-AAB5-5BD54F480FBD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpyWords</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EBFAD71E227F21DFDD958986EAB7DEC84D90F31C</key>
+		<string>github.com:razorstorm/SpyGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpyWords.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EBFAD71E227F21DFDD958986EAB7DEC84D90F31C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:razorstorm/SpyGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EBFAD71E227F21DFDD958986EAB7DEC84D90F31C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EBFAD71E227F21DFDD958986EAB7DEC84D90F31C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpyWords</string>
+		</dict>
+	</array>
+</dict>
+</plist>

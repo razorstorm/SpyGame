@@ -19,8 +19,8 @@
 
 @implementation GameViewController
 
-- (instancetype)init {
-  self = [super init];
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+  self = [super initWithCollectionViewLayout:layout];
   if (self) {
     [self buildPlayers:5 photos:nil];
 
@@ -28,6 +28,11 @@
     self.spyWord = @"Block";
   }
   return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)buildPlayers:(NSInteger)numPlayers photos:(NSArray *)photos {
