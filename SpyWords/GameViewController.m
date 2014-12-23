@@ -22,10 +22,10 @@
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
   self = [super initWithCollectionViewLayout:layout];
   if (self) {
-    [self buildPlayers:5 photos:nil];
-
     self.regularWord = @"Box";
     self.spyWord = @"Block";
+
+    [self buildPlayers:5 photos:nil];
   }
   return self;
 }
@@ -74,6 +74,8 @@
     player.word = isSpy ? self.spyWord : self.regularWord;
     [players addObject:player];
   }
+
+  self.players = players;
 }
 
 #pragma mark - UICollectionView
