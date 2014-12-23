@@ -35,6 +35,11 @@
   self.view.backgroundColor = [UIColor whiteColor];
 }
 
+- (void)viewDidLoad {
+  [self.collectionView registerClass:[PlayerView class]
+          forCellWithReuseIdentifier:[PlayerView reuseIdentifier]];
+}
+
 - (void)buildPlayers:(NSInteger)numPlayers photos:(NSArray *)photos {
   if (numPlayers < 6) {
     self.numSpies = 1;
@@ -88,11 +93,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
   PlayerView *cell = (PlayerView *)[collectionView dequeueReusableCellWithReuseIdentifier:[PlayerView reuseIdentifier] forIndexPath:indexPath];
-  if (!cell) {
-    cell = [PlayerView playerView];
-  }
+//  if (!cell) {
+//    PlayerView *cell = [PlayerView playerView];
+//  }
 
-  if (indexPath.row > 0 && indexPath.row < self.players.count) {
+  if (indexPath.row >= 0 && indexPath.row < self.players.count) {
     cell.player = self.players[indexPath.row];
   }
   else {

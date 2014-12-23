@@ -23,8 +23,12 @@
   return @"PlayerView";
 }
 
+- (NSString *)reuseIdentifier {
+  return [PlayerView reuseIdentifier];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
-  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
+//  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
 }
 
 @end
