@@ -10,16 +10,17 @@
 #import "Player.h"
 
 @interface PlayerView ()
-@property (nonatomic, strong) Player *player;
 @property (nonatomic, weak) IBOutlet UITextView *debugText;
 @end
 
 @implementation PlayerView
 
-+ (PlayerView *)playerViewWithPlayer:(Player *)player {
-  PlayerView *playerView = [[[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil] objectAtIndex:0];
-  playerView.player = player;
-  return playerView;
++ (PlayerView *)playerView {
+  return [[[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil] objectAtIndex:0];
+}
+
++ (NSString *)reuseIdentifier {
+  return @"PlayerView";
 }
 
 - (void)viewWillAppear:(BOOL)animated {

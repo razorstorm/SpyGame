@@ -10,5 +10,7 @@
 @class Player;
 
 @interface PlayerView : UICollectionViewCell
-+ (PlayerView *)playerViewWithPlayer:(Player *)player;
+@property (nonatomic, strong) Player *player;
++ (PlayerView *)playerView;
++ (NSString *)reuseIdentifier;
 @end

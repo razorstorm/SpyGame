@@ -11,7 +11,7 @@
 #import "Player.h"
 
 @interface GameViewController ()
-@property (nonatomic, strong) NSArray *playerViews;
+@property (nonatomic, strong) NSArray *players;
 @property (nonatomic, strong) NSString *regularWord;
 @property (nonatomic, strong) NSString *spyWord;
 @property (nonatomic) NSInteger numSpies;
@@ -67,33 +67,32 @@
     player.photo = nil; // For now
     player.alive = YES;
     player.word = isSpy ? self.spyWord : self.regularWord;
-    PlayerView *pv = [PlayerView playerViewWithPlayer:player];
-    [players addObject:pv];
+    [players addObject:player];
   }
 }
-
 
 #pragma mark - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-  return self.playerViews.count;
+  return self.players.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  AFCollectionViewCell *cell = (AFCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-  NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-  [cell setImage:[UIImage imageWithData:[object valueForKey:@"photoImageData"]]];
+
+  PlayerView *cell = (PlayerView *)[collectionView dequeueReusableCellWithReuseIdentifier:[PlayerView reuseIdentifier] forIndexPath:indexPath];
+  if (!cell) {
+    cell = [PlayerView playerView];
+  }
+
+  if (indexPath.row > 0 && indexPath.row < self.players.count) {
+    cell.player = self.players[indexPath.row];
+  }
+  else {
+    return nil;
+  }
+
   return cell;
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-  if ([[segue identifier] isEqualToString:@"showDetail"]) {
-    NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    [[segue destinationViewController] setDetailItem:object];
-  }
-}
-
 
 @end
