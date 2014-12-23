@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Player : NSObject
+
+@property (nonatomic) BOOL isSpy;
+@property (nonatomic, strong) UIImage *photo;
+@property (nonatomic) BOOL alive;
+@property (nonatomic, weak) NSString *word;
 
 @end

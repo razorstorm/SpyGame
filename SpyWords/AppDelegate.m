@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GameViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+
+  UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+  [aFlowLayout setItemSize:CGSizeMake(200, 140)];
+  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+
+  GameViewController *mvc = [[GameViewController alloc] initWithCollectionViewLayout:aFlowLayout];
+
+  self.window.rootViewController = mvc;
+
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
+
   return YES;
 }
 

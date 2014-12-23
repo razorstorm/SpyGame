@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Player;
 
-@interface PlayerView : UIView
-
+@interface PlayerView : UICollectionViewCell
++ (PlayerView *)playerViewWithPlayer:(Player *)player;
 @end

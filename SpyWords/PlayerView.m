@@ -7,15 +7,23 @@
 //
 
 #import "PlayerView.h"
+#import "Player.h"
+
+@interface PlayerView ()
+@property (nonatomic, strong) Player *player;
+@property (nonatomic, weak) IBOutlet UITextView *debugText;
+@end
 
 @implementation PlayerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (PlayerView *)playerViewWithPlayer:(Player *)player {
+  PlayerView *playerView = [[[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil] objectAtIndex:0];
+  playerView.player = player;
+  return playerView;
 }
-*/
+
+- (void)viewWillAppear:(BOOL)animated {
+  self.debugText.text = [NSString stringWithFormat:@"Spy?: %@, Word: %@, Alive?: %@", self.player.isSpy ? @"YES" : @"NO", self.player.word, self.player.alive ? @"YES" : @"NO"];
+}
 
 @end

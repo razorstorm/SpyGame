@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		B21204621A48A552005C5D72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204611A48A552005C5D72 /* main.m */; };
 		B21204651A48A552005C5D72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204641A48A552005C5D72 /* AppDelegate.m */; };
-		B21204681A48A552005C5D72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204671A48A552005C5D72 /* ViewController.m */; };
-		B212046B1A48A552005C5D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21204691A48A552005C5D72 /* Main.storyboard */; };
 		B212046D1A48A552005C5D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B212046C1A48A552005C5D72 /* Images.xcassets */; };
 		B21204701A48A552005C5D72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B212046E1A48A552005C5D72 /* LaunchScreen.xib */; };
 		B212047C1A48A552005C5D72 /* SpyWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B212047B1A48A552005C5D72 /* SpyWordsTests.m */; };
+		B21204871A48A67A005C5D72 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204861A48A67A005C5D72 /* Player.m */; };
+		B212048A1A48BD47005C5D72 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204891A48BD47005C5D72 /* GameViewController.m */; };
+		B212048C1A48BD64005C5D72 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B212048B1A48BD64005C5D72 /* GameView.xib */; };
+		B21204931A48BE8B005C5D72 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204921A48BE8B005C5D72 /* PlayerView.m */; };
+		B21204951A48DA35005C5D72 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21204941A48DA35005C5D72 /* PlayerView.xib */; };
+		B21204971A48DB8C005C5D72 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B21204961A48DB8C005C5D72 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,20 @@
 		B21204611A48A552005C5D72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B21204631A48A552005C5D72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B21204641A48A552005C5D72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B21204661A48A552005C5D72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B21204671A48A552005C5D72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B212046A1A48A552005C5D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B212046C1A48A552005C5D72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B212046F1A48A552005C5D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B21204751A48A552005C5D72 /* SpyWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpyWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B212047A1A48A552005C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B212047B1A48A552005C5D72 /* SpyWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpyWordsTests.m; sourceTree = "<group>"; };
+		B21204851A48A67A005C5D72 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		B21204861A48A67A005C5D72 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		B21204881A48BD47005C5D72 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		B21204891A48BD47005C5D72 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		B212048B1A48BD64005C5D72 /* GameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
+		B21204911A48BE8B005C5D72 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		B21204921A48BE8B005C5D72 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		B21204941A48DA35005C5D72 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		B21204961A48DB8C005C5D72 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +91,20 @@
 		B212045E1A48A552005C5D72 /* SpyWords */ = {
 			isa = PBXGroup;
 			children = (
+				B21204981A48DB93005C5D72 /* Images */,
 				B21204631A48A552005C5D72 /* AppDelegate.h */,
 				B21204641A48A552005C5D72 /* AppDelegate.m */,
-				B21204661A48A552005C5D72 /* ViewController.h */,
-				B21204671A48A552005C5D72 /* ViewController.m */,
-				B21204691A48A552005C5D72 /* Main.storyboard */,
 				B212046C1A48A552005C5D72 /* Images.xcassets */,
 				B212046E1A48A552005C5D72 /* LaunchScreen.xib */,
 				B212045F1A48A552005C5D72 /* Supporting Files */,
+				B21204851A48A67A005C5D72 /* Player.h */,
+				B21204861A48A67A005C5D72 /* Player.m */,
+				B21204881A48BD47005C5D72 /* GameViewController.h */,
+				B21204891A48BD47005C5D72 /* GameViewController.m */,
+				B212048B1A48BD64005C5D72 /* GameView.xib */,
+				B21204911A48BE8B005C5D72 /* PlayerView.h */,
+				B21204921A48BE8B005C5D72 /* PlayerView.m */,
+				B21204941A48DA35005C5D72 /* PlayerView.xib */,
 			);
 			path = SpyWords;
 			sourceTree = "<group>";
@@ -117,6 +133,14 @@
 				B212047A1A48A552005C5D72 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B21204981A48DB93005C5D72 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B21204961A48DB8C005C5D72 /* placeholder.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +223,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B212046B1A48A552005C5D72 /* Main.storyboard in Resources */,
 				B21204701A48A552005C5D72 /* LaunchScreen.xib in Resources */,
+				B21204971A48DB8C005C5D72 /* placeholder.png in Resources */,
 				B212046D1A48A552005C5D72 /* Images.xcassets in Resources */,
+				B212048C1A48BD64005C5D72 /* GameView.xib in Resources */,
+				B21204951A48DA35005C5D72 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B21204681A48A552005C5D72 /* ViewController.m in Sources */,
+				B212048A1A48BD47005C5D72 /* GameViewController.m in Sources */,
+				B21204871A48A67A005C5D72 /* Player.m in Sources */,
 				B21204651A48A552005C5D72 /* AppDelegate.m in Sources */,
 				B21204621A48A552005C5D72 /* main.m in Sources */,
+				B21204931A48BE8B005C5D72 /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +272,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B21204691A48A552005C5D72 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B212046A1A48A552005C5D72 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B212046E1A48A552005C5D72 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
