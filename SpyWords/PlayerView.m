@@ -8,11 +8,12 @@
 
 #import "PlayerView.h"
 #import "Player.h"
+#import "PlayerCardBackView.h"
 
 @interface PlayerView ()
 @property (weak, nonatomic) IBOutlet UIButton *executeButton;
 @property (nonatomic, strong) UICollectionViewCell *side1;
-@property (nonatomic, strong) UICollectionViewCell *side2;
+@property (nonatomic, strong) PlayerCardBackView *side2;
 @end
 
 @implementation PlayerView
@@ -21,11 +22,10 @@
   self = [super initWithFrame:frame];
   if (self) {
     self.backgroundColor = [UIColor blackColor];
-    NSArray *contentViewNib = [[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil];
-    self.side1 = contentViewNib[0];
+    self.side1 = [[NSBundle mainBundle] loadNibNamed:@"PlayerView" owner:self options:nil][0];
+    self.side1.backgroundColor = [UIColor whiteColor];
 
-    self.side2 = [[UICollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-    self.side2.backgroundColor = [UIColor whiteColor];
+    self.side2 = [[PlayerCardBackView alloc] initWithFrame:frame];
 
     [self.contentView addSubview:self.side1];
   }
@@ -46,16 +46,7 @@
 
 - (void)setPlayer:(Player *)player {
   _player = player;
-  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-  label.text = self.player.isSpy ? @"Spy!" : @"Innocent!";
-  label.textAlignment = NSTextAlignmentCenter;
-  if (self.player.isSpy) {
-    self.side2.backgroundColor = [UIColor greenColor];
-  }
-  else {
-    self.side2.backgroundColor = [UIColor redColor];
-  }
-  [self.side2.contentView addSubview:label];
+  [self.side2 setupInnocence:player.isSpy];
 }
 
 - (IBAction)execute:(id)sender {

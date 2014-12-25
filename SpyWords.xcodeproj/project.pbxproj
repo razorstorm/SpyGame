@@ -17,6 +17,10 @@
 		B21204931A48BE8B005C5D72 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204921A48BE8B005C5D72 /* PlayerView.m */; };
 		B21204951A48DA35005C5D72 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21204941A48DA35005C5D72 /* PlayerView.xib */; };
 		B21204971A48DB8C005C5D72 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B21204961A48DB8C005C5D72 /* placeholder.png */; };
+		B21204A01A4CCF8D005C5D72 /* spy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B212049F1A4CCF8D005C5D72 /* spy.jpg */; };
+		B21204A31A4CCFE7005C5D72 /* PlayerCardBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204A21A4CCFE7005C5D72 /* PlayerCardBackView.m */; };
+		B21204A51A4CD0F0005C5D72 /* PlayerCardBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21204A41A4CD0F0005C5D72 /* PlayerCardBackView.xib */; };
+		B21204A71A4CD807005C5D72 /* innocent.png in Resources */ = {isa = PBXBuildFile; fileRef = B21204A61A4CD807005C5D72 /* innocent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,11 @@
 		B21204921A48BE8B005C5D72 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		B21204941A48DA35005C5D72 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		B21204961A48DB8C005C5D72 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		B212049F1A4CCF8D005C5D72 /* spy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spy.jpg; sourceTree = "<group>"; };
+		B21204A11A4CCFE7005C5D72 /* PlayerCardBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCardBackView.h; sourceTree = "<group>"; };
+		B21204A21A4CCFE7005C5D72 /* PlayerCardBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCardBackView.m; sourceTree = "<group>"; };
+		B21204A41A4CD0F0005C5D72 /* PlayerCardBackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerCardBackView.xib; sourceTree = "<group>"; };
+		B21204A61A4CD807005C5D72 /* innocent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = innocent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +111,9 @@
 				B21204911A48BE8B005C5D72 /* PlayerView.h */,
 				B21204921A48BE8B005C5D72 /* PlayerView.m */,
 				B21204941A48DA35005C5D72 /* PlayerView.xib */,
+				B21204A11A4CCFE7005C5D72 /* PlayerCardBackView.h */,
+				B21204A21A4CCFE7005C5D72 /* PlayerCardBackView.m */,
+				B21204A41A4CD0F0005C5D72 /* PlayerCardBackView.xib */,
 			);
 			path = SpyWords;
 			sourceTree = "<group>";
@@ -135,6 +147,8 @@
 		B21204981A48DB93005C5D72 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B21204A61A4CD807005C5D72 /* innocent.png */,
+				B212049F1A4CCF8D005C5D72 /* spy.jpg */,
 				B21204961A48DB8C005C5D72 /* placeholder.png */,
 			);
 			name = Images;
@@ -222,6 +236,9 @@
 			files = (
 				B21204701A48A552005C5D72 /* LaunchScreen.xib in Resources */,
 				B21204971A48DB8C005C5D72 /* placeholder.png in Resources */,
+				B21204A51A4CD0F0005C5D72 /* PlayerCardBackView.xib in Resources */,
+				B21204A01A4CCF8D005C5D72 /* spy.jpg in Resources */,
+				B21204A71A4CD807005C5D72 /* innocent.png in Resources */,
 				B212046D1A48A552005C5D72 /* Images.xcassets in Resources */,
 				B21204951A48DA35005C5D72 /* PlayerView.xib in Resources */,
 			);
@@ -245,6 +262,7 @@
 				B21204871A48A67A005C5D72 /* Player.m in Sources */,
 				B21204651A48A552005C5D72 /* AppDelegate.m in Sources */,
 				B21204621A48A552005C5D72 /* main.m in Sources */,
+				B21204A31A4CCFE7005C5D72 /* PlayerCardBackView.m in Sources */,
 				B21204931A48BE8B005C5D72 /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ovY-bm-v6H" customClass="PlayerCardBackView">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spy.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PRs-db-EPu">
+                        <rect key="frame" x="15" y="8" width="70" height="81"/>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="innocent.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vr2-Ew-uey">
+                        <rect key="frame" x="15" y="8" width="70" height="81"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCu-9F-zzJ">
+                        <rect key="frame" x="0.0" y="98" width="100" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <size key="customSize" width="131" height="190"/>
+            <connections>
+                <outlet property="innocentPic" destination="Vr2-Ew-uey" id="csf-dN-GUb"/>
+                <outlet property="roleLabel" destination="FCu-9F-zzJ" id="41L-cB-m1r"/>
+                <outlet property="spyPic" destination="PRs-db-EPu" id="Vyv-U5-OrK"/>
+            </connections>
+            <point key="canvasLocation" x="92" y="73"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="innocent.png" width="233" height="300"/>
+        <image name="spy.jpg" width="259" height="320"/>
+    </resources>
+</document>
