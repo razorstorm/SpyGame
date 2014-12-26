@@ -7,17 +7,22 @@
 //
 
 #import "PlayerWordFrontView.h"
+#import "PlayerWordView.h"
 
 @implementation PlayerWordFrontView
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-  if ([self.delegate canActivateCard:self.playerIndex]) {
-    [UIView transitionFromView:self.side1
-                        toView:self.side2
-                      duration:0.4f
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    completion:NULL];
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+  if (self) {
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.jpg"]];
+    bgView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    [self addSubview:bgView];
   }
+  return self;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.parentView onTouch];
 }
 
 @end

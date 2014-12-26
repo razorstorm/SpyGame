@@ -8,9 +8,10 @@
 
 #import "PlayerWordView.h"
 #import "PlayerWordBackView.h"
+#import "PlayerWordFrontView.h"
 
 @interface PlayerWordView ()
-@property (nonatomic, strong) UICollectionViewCell *side1;
+@property (nonatomic, strong) PlayerWordFrontView *side1;
 @property (nonatomic, strong) PlayerWordBackView *side2;
 @end
 
@@ -20,22 +21,14 @@
 
   self = [super initWithFrame:frame];
   if (self) {
-    self.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
 
-    self.side1 = [[UICollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.jpg"]];
-    bgView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-    [self.side1 addSubview:bgView];
-
+    self.side1 = [[PlayerWordFrontView alloc] initWithFrame:frame];
+    self.side1.parentView = self;
     self.side2 = [[NSBundle mainBundle] loadNibNamed:@"PlayerWordBackView" owner:self options:nil][0];
+    self.side2.parentView = self;
 
-    __weak PlayerWordView *wself = self;
-    self.side2.block = ^{
-      [wself.delegate cellReady];
-    };
-
-    [self.contentView addSubview:self.side1];
-
+    self.side2.hidden = YES;
+    [self addSubview:self.side1];
   }
   return self;
 }
@@ -48,7 +41,22 @@
   return [PlayerWordView reuseIdentifier];
 }
 
--(void)setWord:(NSString *)word {
+- (void)onTouch {
+  if ([self.delegate canActivateCard:self.playerIndex]) {
+    self.side2.hidden = NO;
+    [UIView transitionFromView:self.side1
+                        toView:self.side2
+                      duration:0.4f
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:NULL];
+  }
+}
+
+- (void)onReady {
+  [self.delegate cellReady];
+}
+
+- (void)setWord:(NSString *)word {
   _word = word;
   self.side2.wordLabel.text = word;
 }

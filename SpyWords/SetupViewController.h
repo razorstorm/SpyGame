@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 @protocol PlayerWordViewDelegate;
 
-@interface SetupViewController : UICollectionViewController <PlayerWordViewDelegate>
+@interface SetupViewController : UIViewController <PlayerWordViewDelegate>
+
 - (instancetype)initWithNumPlayers:(NSInteger)numPlayers
-                       regularWord:(NSString *)regularWord
-                           spyWord:(NSString *)spyWord;
+                  regularWord:(NSString *)regularWord
+                      spyWord:(NSString *)spyWord;
 @end

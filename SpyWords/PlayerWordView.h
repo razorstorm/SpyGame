@@ -14,11 +14,14 @@
 - (BOOL)canActivateCard:(NSInteger)index;
 @end
 
-@interface PlayerWordView : UICollectionViewCell
+@interface PlayerWordView : UIView
 @property (nonatomic, strong) NSString *word;
 @property (nonatomic) NSInteger playerIndex;
 @property (nonatomic, weak) id<PlayerWordViewDelegate> delegate;
 
 + (NSString *)reuseIdentifier;
+
+- (void)onTouch;
+- (void)onReady;
 @end
 

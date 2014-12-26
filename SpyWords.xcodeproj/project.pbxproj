@@ -22,7 +22,6 @@
 		B21204A51A4CD0F0005C5D72 /* PlayerCardBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21204A41A4CD0F0005C5D72 /* PlayerCardBackView.xib */; };
 		B21204A71A4CD807005C5D72 /* innocent.png in Resources */ = {isa = PBXBuildFile; fileRef = B21204A61A4CD807005C5D72 /* innocent.png */; };
 		B21204AA1A4D4D90005C5D72 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204A91A4D4D90005C5D72 /* SetupViewController.m */; };
-		B21204B11A4D510A005C5D72 /* StackedDeckLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204B01A4D510A005C5D72 /* StackedDeckLayout.m */; };
 		B21204B41A4D519C005C5D72 /* PlayerWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B21204B31A4D519C005C5D72 /* PlayerWordView.m */; };
 		B21204B61A4D51B8005C5D72 /* PlayerWordBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21204B51A4D51B8005C5D72 /* PlayerWordBackView.xib */; };
 		B21204B81A4D5604005C5D72 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B21204B71A4D5604005C5D72 /* bg.jpg */; };
@@ -66,8 +65,6 @@
 		B21204A61A4CD807005C5D72 /* innocent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = innocent.png; sourceTree = "<group>"; };
 		B21204A81A4D4D90005C5D72 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		B21204A91A4D4D90005C5D72 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
-		B21204AF1A4D510A005C5D72 /* StackedDeckLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedDeckLayout.h; sourceTree = "<group>"; };
-		B21204B01A4D510A005C5D72 /* StackedDeckLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedDeckLayout.m; sourceTree = "<group>"; };
 		B21204B21A4D519C005C5D72 /* PlayerWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerWordView.h; sourceTree = "<group>"; };
 		B21204B31A4D519C005C5D72 /* PlayerWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerWordView.m; sourceTree = "<group>"; };
 		B21204B51A4D51B8005C5D72 /* PlayerWordBackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerWordBackView.xib; sourceTree = "<group>"; };
@@ -117,7 +114,6 @@
 		B212045E1A48A552005C5D72 /* SpyWords */ = {
 			isa = PBXGroup;
 			children = (
-				B21204AE1A4D50F5005C5D72 /* Layout */,
 				B21204AD1A4D4DC5005C5D72 /* Delegate */,
 				B21204AC1A4D4DA9005C5D72 /* Models */,
 				B212046C1A48A552005C5D72 /* Images.xcassets */,
@@ -198,15 +194,6 @@
 				B21204641A48A552005C5D72 /* AppDelegate.m */,
 			);
 			name = Delegate;
-			sourceTree = "<group>";
-		};
-		B21204AE1A4D50F5005C5D72 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				B21204AF1A4D510A005C5D72 /* StackedDeckLayout.h */,
-				B21204B01A4D510A005C5D72 /* StackedDeckLayout.m */,
-			);
-			name = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +306,6 @@
 				B21204B41A4D519C005C5D72 /* PlayerWordView.m in Sources */,
 				B212048A1A48BD47005C5D72 /* GameViewController.m in Sources */,
 				B21204871A48A67A005C5D72 /* Player.m in Sources */,
-				B21204B11A4D510A005C5D72 /* StackedDeckLayout.m in Sources */,
 				B21204BB1A4D5652005C5D72 /* PlayerWordBackView.m in Sources */,
 				B21204AA1A4D4D90005C5D72 /* SetupViewController.m in Sources */,
 				B21204651A48A552005C5D72 /* AppDelegate.m in Sources */,

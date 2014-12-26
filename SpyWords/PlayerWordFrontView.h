@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PlayerWordView;
 
-@interface PlayerWordFrontView : UICollectionViewCell
-
+@interface PlayerWordFrontView : UIView
+@property (nonatomic, weak) PlayerWordView *parentView;
 @end

@@ -21,8 +21,8 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
   SetupViewController *mvc = [[SetupViewController alloc] initWithNumPlayers:7
-                                                                 regularWord:@"Dog"
-                                                                     spyWord:@"Doug"];
+                                                            regularWord:@"Dog"
+                                                                spyWord:@"Doug"];
 
   self.window.rootViewController = mvc;
   self.window.backgroundColor = [UIColor whiteColor];

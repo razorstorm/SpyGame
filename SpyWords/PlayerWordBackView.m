@@ -7,12 +7,11 @@
 //
 
 #import "PlayerWordBackView.h"
+#import "PlayerWordView.h"
 
 @implementation PlayerWordBackView
 - (IBAction)readyButton:(id)sender {
-  if (self.block) {
-    self.block();
-  }
+  [self.parentView onReady];
 }
 
 @end

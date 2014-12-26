@@ -14,31 +14,20 @@
 @property (nonatomic, strong) NSString *regularWord;
 @property (nonatomic, strong) NSString *spyWord;
 @property (nonatomic, strong) NSArray *players;
+@property (nonatomic, strong) NSDictionary *playerViews;
 @property (nonatomic) int currIndex;
 @end
+
+#define OFFSET 3
+#define CARD_WIDTH 100
+#define CARD_HEIGHT 140
 
 @implementation SetupViewController
 
 - (instancetype)initWithNumPlayers:(NSInteger)numPlayers
-                       regularWord:(NSString *)regularWord
-                           spyWord:(NSString *)spyWord {
-  //TODO
-  UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-  [aFlowLayout setItemSize:CGSizeMake(100, 140)];
-  [aFlowLayout setSectionInset:UIEdgeInsetsMake(20, 20, 20, 20)];
-  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-
-  return [self initWithCollectionViewLayout:aFlowLayout
-                                 numPlayers:numPlayers
-                                regularWord:regularWord
-                                    spyWord:spyWord];
-}
-
-- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
-                                  numPlayers:(NSInteger)numPlayers
-                                 regularWord:(NSString *)regularWord
-                                     spyWord:(NSString *)spyWord {
-  self = [super initWithCollectionViewLayout:layout];
+                  regularWord:(NSString *)regularWord
+                      spyWord:(NSString *)spyWord {
+  self = [super init];
 
   if (self) {
     self.regularWord = regularWord;
@@ -51,8 +40,24 @@
 }
 
 - (void)viewDidLoad {
-  [self.collectionView registerClass:[PlayerWordView class]
-          forCellWithReuseIdentifier:[PlayerWordView reuseIdentifier]];
+  NSMutableDictionary *playerViews = [[NSMutableDictionary alloc] init];
+
+  int height = self.view.frame.size.height;
+  int width = self.view.frame.size.width;
+  int xPos = width/2.0 - CARD_WIDTH/2.0;
+  int yPos = height/2.0 - CARD_HEIGHT/2.0;
+
+  for (int i = (int)self.players.count-1; i >= 0; i--) {
+    PlayerWordView *cell = [[PlayerWordView alloc] initWithFrame:CGRectMake(xPos-OFFSET*i,yPos,100,140)];
+
+    cell.word = ((Player *)self.players[i]).word;
+    cell.delegate = self;
+    cell.playerIndex = i;
+
+    [playerViews setObject:cell forKey:@(i)];
+    [self.view addSubview:cell];
+  }
+  self.playerViews = playerViews;
 }
 
 - (void)buildPlayers:(NSInteger)numPlayers {
@@ -98,35 +103,11 @@
   self.players = players;
 }
 
-#pragma mark - UICollectionView
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-  return self.players.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-  PlayerWordView *cell = (PlayerWordView *)[collectionView dequeueReusableCellWithReuseIdentifier:[PlayerWordView reuseIdentifier] forIndexPath:indexPath];
-
-  if (indexPath.row >= 0 && indexPath.row < self.players.count) {
-    cell.word = ((Player *)self.players[indexPath.row]).word;
-    cell.playerIndex = indexPath.row;
-    cell.delegate = self;
-
-    if (indexPath.row < self.currIndex) {
-      cell.hidden = YES;
-    }
-  }
-  else {
-    return nil;
-  }
-
-  return cell;
-}
-
 - (void)cellReady {
+  PlayerWordView *topCardView = self.playerViews[@(self.currIndex)];
+  [topCardView removeFromSuperview];
+
   self.currIndex++;
-  [self.collectionView reloadData];
 }
 
 - (BOOL)canActivateCard:(NSInteger)index {
