@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GameViewController : UICollectionViewController
-- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout;
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
+                                     players:(NSArray *)players
+                                 regularWord:(NSString *)regularWord
+                                     spyWord:(NSString *)spyWord;
 @end

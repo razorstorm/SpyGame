@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GameViewController.h"
+#import "SetupViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  
-  UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-  [aFlowLayout setItemSize:CGSizeMake(100, 140)];
-  [aFlowLayout setSectionInset:UIEdgeInsetsMake(20, 20, 20, 20)];
-  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
 
-  GameViewController *mvc = [[GameViewController alloc] initWithCollectionViewLayout:aFlowLayout];
+  SetupViewController *mvc = [[SetupViewController alloc] initWithNumPlayers:7
+                                                                 regularWord:@"Dog"
+                                                                     spyWord:@"Doug"];
 
   self.window.rootViewController = mvc;
   self.window.backgroundColor = [UIColor whiteColor];

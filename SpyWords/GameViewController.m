@@ -12,20 +12,30 @@
 
 @interface GameViewController ()
 @property (nonatomic, strong) NSArray *players;
-@property (nonatomic, strong) NSString *regularWord;
-@property (nonatomic, strong) NSString *spyWord;
 @property (nonatomic) NSInteger numSpies;
 @end
 
 @implementation GameViewController
 
-- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+- (instancetype)initWithPlayers:(NSArray *)players
+                    regularWord:(NSString *)regularWord
+                        spyWord:(NSString *)spyWord {
+  UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+  [aFlowLayout setItemSize:CGSizeMake(100, 140)];
+  [aFlowLayout setSectionInset:UIEdgeInsetsMake(20, 20, 20, 20)];
+  [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+
+  return [self initWithCollectionViewLayout:aFlowLayout players:players regularWord:regularWord spyWord:spyWord];
+}
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
+                                     players:(NSArray *)players
+                                 regularWord:(NSString *)regularWord
+                                     spyWord:(NSString *)spyWord {
+
   self = [super initWithCollectionViewLayout:layout];
   if (self) {
-    self.regularWord = @"Box";
-    self.spyWord = @"Block";
-
-    [self buildPlayers:7 photos:nil];
+    self.players = players;
   }
   return self;
 }
@@ -38,49 +48,6 @@
 - (void)viewDidLoad {
   [self.collectionView registerClass:[PlayerView class]
           forCellWithReuseIdentifier:[PlayerView reuseIdentifier]];
-}
-
-- (void)buildPlayers:(NSInteger)numPlayers photos:(NSArray *)photos {
-  if (numPlayers < 6) {
-    self.numSpies = 1;
-  }
-  else if (numPlayers < 11) {
-    self.numSpies = 2;
-  }
-  else {
-    self.numSpies = numPlayers * 0.2;
-  }
-
-  NSMutableSet *spyIndexes = [[NSMutableSet alloc] init];
-
-  for (int spyNum = 0; spyNum < self.numSpies; spyNum++) {
-    NSInteger randomIndex = arc4random_uniform((u_int32_t)numPlayers);
-
-    while ([spyIndexes containsObject:@(randomIndex)]) {
-      randomIndex++;
-      if (randomIndex >= self.numSpies) {
-        randomIndex = 0;
-      }
-    }
-    [spyIndexes addObject:@(randomIndex)];
-  }
-
-  NSMutableArray *players = [[NSMutableArray alloc] init];
-
-  for (int i = 0; i < numPlayers; i++) {
-    BOOL isSpy = NO;
-    if ([spyIndexes containsObject:@(i)]) {
-      isSpy = YES;
-    }
-    Player *player = [[Player alloc] init];
-    player.isSpy = isSpy;
-    player.photo = nil; // For now
-    player.alive = YES;
-    player.word = isSpy ? self.spyWord : self.regularWord;
-    [players addObject:player];
-  }
-
-  self.players = players;
 }
 
 #pragma mark - UICollectionView
