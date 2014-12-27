@@ -24,7 +24,7 @@
 
     self.side1 = [[PlayerWordFrontView alloc] initWithFrame:frame];
     self.side1.parentView = self;
-    self.side2 = [[NSBundle mainBundle] loadNibNamed:@"PlayerWordBackView" owner:self options:nil][0];
+    self.side2 = [[PlayerWordBackView alloc] initWithFrame:frame];
     self.side2.parentView = self;
 
     self.side2.hidden = YES;

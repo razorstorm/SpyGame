@@ -34,6 +34,7 @@
     self.spyWord = spyWord;
     [self buildPlayers:numPlayers];
     self.currIndex = 0;
+    self.view.backgroundColor = [UIColor blackColor];
   }
 
   return self;
@@ -108,6 +109,14 @@
   [topCardView removeFromSuperview];
 
   self.currIndex++;
+
+  if (self.currIndex >= self.players.count) {
+    [self showGameView];
+  }
+}
+
+- (void)showGameView {
+  //TODO
 }
 
 - (BOOL)canActivateCard:(NSInteger)index {
